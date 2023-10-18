@@ -24,6 +24,9 @@ REACT　Tailwind
 
 [Tailwind の説明](https://reffect.co.jp/html/tailwindcss-for-beginners/)
 
+## データベース使いたい場合
+firebase オヌヌメ<br>
+[React+firebaseの使い方](https://yoheiko.com/blog/react-firestore%E3%80%90%E5%85%A5%E9%96%80%E3%81%8B%E3%82%89%E5%AE%9F%E8%A3%85%E3%81%BE%E3%81%A7%E3%80%91/)
 
 ## 画面ごとにsrcの下にフォルダーを作成してね
 ## 担当画面
