@@ -1,10 +1,11 @@
 import './App.css';
-import Test from "./test/test"
+import FireStoreModel from './components/FireStoreModel';
 
 function App() {
+
   return (
     <div>
-      <Test />
+      <FireStoreModel />
     </div>
   );
 }

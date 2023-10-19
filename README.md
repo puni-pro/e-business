@@ -26,6 +26,8 @@ REACT　Tailwind
 firebase オヌヌメ<br>
 [React+firebaseの使い方](https://yoheiko.com/blog/react-firestore%E3%80%90%E5%85%A5%E9%96%80%E3%81%8B%E3%82%89%E5%AE%9F%E8%A3%85%E3%81%BE%E3%81%A7%E3%80%91/)
 
+https://www.youtube.com/watch?v=9NOg_HSbo9w&t=46s
+
 ## 環境構築手順
 ### 1.VSCodeを入れる
 https://skillhub.jp/blogs/235#skillhub-chapter-1
