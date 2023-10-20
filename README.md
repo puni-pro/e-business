@@ -64,6 +64,8 @@ npm start
 ## githubの使い方は以下のURLを参考にして
 #### 開発の流れからみてね　[githubを使った共同作業の手順](https://qiita.com/future_kame/items/9fa256aea09faa28b357)
 
+## githubの使い方わかるけど実際どのように使うかわからない人
+[Github　業務フロー](https://qiita.com/higakin/items/ead91bf04720f8eb07c0)
 
 # 以上！！！！
 変更日　2023/10/19
