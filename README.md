@@ -60,7 +60,6 @@ npm start
 ## 森本
 きめてない
 
-a
 ## githubの使い方は以下のURLを参考にして
 #### 開発の流れからみてね　[githubを使った共同作業の手順](https://qiita.com/future_kame/items/9fa256aea09faa28b357)
 
