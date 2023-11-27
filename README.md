@@ -42,8 +42,9 @@ https://www.sejuku.net/blog/73468
 https://nodejs.org/ja/download
 ### 6.クローンしたリポジトリのディレクトリ内で以下のコマンドを実行
 ```
-rm -rf node_modules #こっちエラーでるかもでてもいいよ
 npm install
+npm i react-firebase-hooks
+npm install react-router-dom
 ```
 ### 7.環境構築は完了
 
