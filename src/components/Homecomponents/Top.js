@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useAuthState } from 'react-firebase-hooks/auth';
-import db, { auth } from '../../services/firebase.config';
-import { collection, query, getDocs, limit } from 'firebase/firestore';
+import { collection, query, getDocs, limit, orderBy, onSnapshot } from 'firebase/firestore';
+import db from '../../services/firebase.config';
+import ViewList from './ViewList';
 
 function Top() {
-    const [user] = useAuthState(auth)
-
     const [examdata, setData] = useState([]);
-
     useEffect(() => {
         //データベースからデータ取得
-        const q = query(collection(db, "PastExamData"), limit(50));
+        const q = query(collection(db, "PastExamData"), orderBy("uploadtime", "desc"), limit(50));
 
         getDocs(q).then((snapshots) => {
             // doc.data() is never undefined for query doc snapshots
@@ -18,23 +15,14 @@ function Top() {
             setData(snapshots.docs.map((doc) => ({ ...doc.data() })));
         });
 
+        onSnapshot(q, (snapshots) => {
+            setData(snapshots.docs.map((doc) => ({ ...doc.data() })));
+        });
 
     }, [])
     return (
-        <div>
-            {user.uid}
-
-            <p>データリストの表示</p>
-            {examdata.map((data) => (
-                <div key={data.dataID}>
-
-                    <p>{data.title}</p>
-
-                </div>
-
-            ))}
-        </div>
+        <ViewList examdata = {examdata}/>   
     )
 }
 
-export default Top
+export default Top;
