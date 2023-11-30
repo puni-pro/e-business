@@ -3,7 +3,6 @@ import { getDownloadURL, getStorage, ref } from 'firebase/storage';
 import React, { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../services/firebase.config';
-import { prettyDOM } from '@testing-library/react';
 
 
 function ViewList(props) {
@@ -12,23 +11,23 @@ function ViewList(props) {
 
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Tokyo' };
     return (
-
-        <div>
-            {user.uid}
-            <p>データリストの表示</p>
+        <div className='bg-slate-600 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
             {props.examdata.map((data) => (
-                <div key={data.dataID} class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <CloudStorageImg Id = {data.dataID} name = {data.firstdataName}/>
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h5>
+                <>
+                    <div key={data.dataID} className="block  p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <a href='#'>
+                            <div>
+                                <CloudStorageImg Id={data.dataID} name={data.firstdataName} />
+
+                            </div>
+                            <div>
+                                <h5 >{data.title}</h5>
+                                <p>{data.uploadtime.toDate().toLocaleTimeString('ja-jp', options)}</p>
+                            </div>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{data.uploadtime.toDate().toLocaleTimeString('ja-jp',options)}</p>
-                   
+
                     </div>
-                </div>
+                </>
             ))}
         </div>
     )
@@ -51,6 +50,11 @@ function CloudStorageImg(props) {
         })
     }, [])
     return (
-        <img src={refURL} height="720px" ></img>
+        <div className="max-w-screen-lg mx-auto">
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <img class="absolute inset-0 w-full h-full object-cover" src={refURL} ></img>
+            </div>
+        </div>
+
     )
 }
