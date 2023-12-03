@@ -11,10 +11,10 @@ function ViewList(props) {
 
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Tokyo' };
     return (
-        <div className='bg-slate-600 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+        <div key = "viewer" className='bg-slate-600 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
             {props.examdata.map((data) => (
-                <>
-                    <div key={data.dataID} className="block  p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <div key={data.dataID}>
+                    <div  className="block  p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <a href='#'>
                             <div>
                                 <CloudStorageImg Id={data.dataID} name={data.firstdataName} />
@@ -27,7 +27,7 @@ function ViewList(props) {
                         </a>
 
                     </div>
-                </>
+                </div>
             ))}
         </div>
     )
@@ -52,7 +52,7 @@ function CloudStorageImg(props) {
     return (
         <div className="max-w-screen-lg mx-auto">
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <img class="absolute inset-0 w-full h-full object-cover" src={refURL} ></img>
+                <img className="absolute inset-0 w-full h-full object-cover" src={refURL} ></img>
             </div>
         </div>
 
