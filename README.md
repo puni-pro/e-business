@@ -4,8 +4,11 @@
 # 過去問共有サービス
 ### 過去問をユーザー間で共有することができるサービス
 
-# FDD および　DFD
-![](./draw/FDD_DFD.drawio.svg)
+# FDD
+![](./draw/FDD.drawio.svg)
+
+# DFD
+![](./draw/DFD.drawio.svg)
 
 
 ## 環境
